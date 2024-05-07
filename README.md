@@ -55,7 +55,7 @@ We will use Anaconda to manage our virtual environment:
      cd $ISAAC_SIM
      conda env create -f environment.yml
      conda activate isaac-sim
-     cd ~/OmniIsaacGymEnvs-UR10Reacher
+     cd ~/pizzaro
      pip install -e .
      # Below is optional
      pip install pyyaml rospkg
@@ -95,7 +95,7 @@ from here and unzip it to `~/pizzaro/`: [model_checkpoint](https://drive.google.
 
 ## Testing
 
-Make sure you have model checkpoints at `~/OmniIsaacGymEnvs-UR10Reacher/runs`, you can check it with the following command:
+Make sure you have model checkpoints at `~/pizzaro/runs`, you can check it with the following command:
 
 ```sh
 ls ~/pizzaro/runs/UR10Reacher/nn/
