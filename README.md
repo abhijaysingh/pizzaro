@@ -1,4 +1,4 @@
-# UR10 Assembler Reinforcement Learning Environment for Omniverse Isaac Gym/Sim
+# PizzaRo - UR10 Assembly using Reinforcement Learning
 
 This repository adds a UR10Assembler environment based on [OmniIsaacGymEnvs](https://github.com/NVIDIA-Omniverse/OmniIsaacGymEnvs) to control a [UR10](https://www.universal-robots.com/products/ur10-robot/) with the policy learned by reinforcement learning in Omniverse Isaac Gym/Sim. The policy learns to assemble a pizza using two UR10 robots.
 
@@ -23,15 +23,9 @@ Make sure to install Isaac Sim in the default directory and clone this repositor
 We will use Anaconda to manage our virtual environment:
 
 1. Clone this repository:
-   - Linux
      ```sh
      cd ~
-     git clone https://github.com/j3soon/OmniIsaacGymEnvs-UR10Reacher.git
-     ```
-   - Windows
-     ```sh
-     cd %USERPROFILE%
-     git clone https://github.com/j3soon/OmniIsaacGymEnvs-UR10Reacher.git
+     git clone https://github.com/abhijaysingh/pizzaro.git
      ```
 2. Generate [instanceable](https://docs.omniverse.nvidia.com/isaacsim/latest/isaac_gym_tutorials/tutorial_gym_instanceable_assets.html) UR10 assets for training:
 
@@ -49,14 +43,12 @@ We will use Anaconda to manage our virtual environment:
    bash Anaconda3-2022.10-Linux-x86_64.sh
    ```
 5. Patch Isaac Sim 2022.1.1
-   - Linux
      ```sh
      export ISAAC_SIM="$HOME/.local/share/ov/pkg/isaac_sim-2022.1.1"
      cp $ISAAC_SIM/setup_python_env.sh $ISAAC_SIM/setup_python_env.sh.bak
      cp ~/OmniIsaacGymEnvs-UR10Reacher/isaac_sim-2022.1.1-patch/setup_python_env.sh $ISAAC_SIM/setup_python_env.sh
      ```
 6. [Set up conda environment for Isaac Sim](https://docs.omniverse.nvidia.com/isaacsim/latest/installation/install_python.html#advanced-running-with-anaconda)
-   - Linux
      ```sh
      # conda remove --name isaac-sim --all
      export ISAAC_SIM="$HOME/.local/share/ov/pkg/isaac_sim-2022.1.1"
@@ -69,7 +61,6 @@ We will use Anaconda to manage our virtual environment:
      pip install pyyaml rospkg
      ```
 7. Activate conda & ROS environment
-   - Linux
      ```sh
      export ISAAC_SIM="$HOME/.local/share/ov/pkg/isaac_sim-2022.1.1"
      cd $ISAAC_SIM
@@ -87,43 +78,38 @@ Please note that you should execute the commands in Step 7 for every new shell.
 You can launch the training in `headless` mode as follows:
 
 ```sh
-cd ~/OmniIsaacGymEnvs-UR10Reacher
+cd ~/pizzaro
 python omniisaacgymenvs/scripts/rlgames_train.py task=UR10Assembler headless=True
 ```
 
 The number of environments is set to 512 by default. If your GPU has small memory, you can decrease the number of environments by changing the arguments `num_envs` as below:
 
 ```sh
-cd ~/OmniIsaacGymEnvs-UR10Reacher
+cd ~/pizzaro
 python omniisaacgymenvs/scripts/rlgames_train.py task=UR10Assembler headless=True num_envs=512
 ```
 
-You can also skip training by downloading the pre-trained model checkpoint by:
+You can also skip training by downloading the pre-trained model checkpoint 
+from here and unzip it to `~/pizzaro/`: [model_checkpoint](https://drive.google.com/drive/folders/1K7rE8uEPoW7ihr-N11NPrDBvvadixddq?usp=drive_link)
 
-```sh
-cd ~/OmniIsaacGymEnvs-UR10Reacher
-wget https://github.com/j3soon/OmniIsaacGymEnvs-UR10Reacher/releases/download/v1.0.0/runs.zip
-unzip runs.zip
-```
-
-The learning curve of the pre-trained model (normal vs. safety):
-
-![](docs/media/UR10Reacher-Learning-Curve.png)
-![](docs/media/UR10Reacher-Learning-Curve-Safety.png)
 
 ## Testing
 
 Make sure you have model checkpoints at `~/OmniIsaacGymEnvs-UR10Reacher/runs`, you can check it with the following command:
 
 ```sh
-ls ~/OmniIsaacGymEnvs-UR10Reacher/runs/UR10Reacher/nn/
+ls ~/pizzaro/runs/UR10Reacher/nn/
 ```
 
 You can visualize the learned policy by the following command:
 
 ```sh
-cd ~/OmniIsaacGymEnvs-UR10Reacher
+cd ~/pizzaro
 python omniisaacgymenvs/scripts/rlgames_train.py task=UR10Assembler test=True num_envs=512 checkpoint=./runs/UR10Assembler/nn/UR10Assembler.pth
 ```
 
 Likewise, you can decrease the number of environments by modifying the parameter `num_envs=512`.
+
+
+## Help
+For any queries, please raise an issue or contact me at abhijay@umd.edu.
