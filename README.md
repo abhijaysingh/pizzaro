@@ -46,7 +46,7 @@ We will use Anaconda to manage our virtual environment:
      ```sh
      export ISAAC_SIM="$HOME/.local/share/ov/pkg/isaac_sim-2022.1.1"
      cp $ISAAC_SIM/setup_python_env.sh $ISAAC_SIM/setup_python_env.sh.bak
-     cp ~/OmniIsaacGymEnvs-UR10Reacher/isaac_sim-2022.1.1-patch/setup_python_env.sh $ISAAC_SIM/setup_python_env.sh
+     cp ~/pizzaro/isaac_patch/setup_python_env.sh $ISAAC_SIM/setup_python_env.sh
      ```
 6. [Set up conda environment for Isaac Sim](https://docs.omniverse.nvidia.com/isaacsim/latest/installation/install_python.html#advanced-running-with-anaconda)
      ```sh
