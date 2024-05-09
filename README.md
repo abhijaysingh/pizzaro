@@ -98,7 +98,7 @@ from here and unzip it to `~/pizzaro/`: [model_checkpoint](https://drive.google.
 Make sure you have model checkpoints at `~/pizzaro/runs`, you can check it with the following command:
 
 ```sh
-ls ~/pizzaro/runs/UR10Reacher/nn/
+ls ~/pizzaro/runs/UR10Assembler/nn/
 ```
 
 You can visualize the learned policy by the following command:
