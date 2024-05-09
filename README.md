@@ -92,6 +92,13 @@ python omniisaacgymenvs/scripts/rlgames_train.py task=UR10Assembler headless=Tru
 You can also skip training by downloading the pre-trained model checkpoint 
 from here and unzip it to `~/pizzaro/`: [model_checkpoint](https://drive.google.com/drive/folders/1K7rE8uEPoW7ihr-N11NPrDBvvadixddq?usp=drive_link)
 
+or use this (*Recommended*) :
+```sh
+cd ~/pizzaro
+wget https://github.com/abhijaysingh/pizzaro/releases/download/v1.0.0/runs.zip
+unzip runs.zip
+```
+
 
 ## Testing
 
