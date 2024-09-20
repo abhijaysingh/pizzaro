@@ -1,6 +1,6 @@
 # PizzaRo - Multi-agent Collaboration using Reinforcement Learning
 
-This repository adds a UR10Assembler environment based on [OmniIsaacGymEnvs](https://github.com/NVIDIA-Omniverse/OmniIsaacGymEnvs) to control a [UR10](https://www.universal-robots.com/products/ur10-robot/) with the policy learned by reinforcement learning in Omniverse Isaac Gym/Sim. The policy learns to assemble a pizza using two UR10 robots.
+This research project explores multi-agent collaboration in completing assembly tasks. Reinforcement Learning is employed to learn a policy to place toppings on a pizza base using 2 UR10s. This project adds a UR10Assembler environment based on [OmniIsaacGymEnvs](https://github.com/NVIDIA-Omniverse/OmniIsaacGymEnvs) to control a [UR10](https://www.universal-robots.com/products/ur10-robot/) with the policy learned by reinforcement learning in Omniverse Isaac Gym/Sim.
 
 We target Isaac Sim 2022.1.1 and tested the RL code on Ubuntu 20.04. 
 
