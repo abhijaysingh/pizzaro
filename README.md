@@ -119,4 +119,4 @@ Likewise, you can decrease the number of environments by modifying the parameter
 
 
 ## Help
-For any queries, please raise an issue or contact me at abhijay@umd.edu.
+For any queries, raise an issue and I will get back to you.
